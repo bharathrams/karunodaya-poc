@@ -1,0 +1,7 @@
+{
+  "name": "Reading Journey App",
+  "description": "A personalized reading journey app to help children improve their reading skills through assessments, personalized plans, and progress tracking.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

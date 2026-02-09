@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Journey App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF7A00",
+                        "primary-dark": "#E66E00",
+                        "background-light": "#FFF9F5",
+                        "background-dark": "#1A1410",
+                        "soft-orange": "#fff7ed",
+                        "soft-blue": "#e0f2fe",
+                        "soft-yellow": "#fef9c3",
+                        "brand-orange": "#ff7e33",
+                        "brand-light-bg": "#fffcf9",
+                        "brand-dark-bg": "#1a120e",
+                        "text-light": "#2d1a0f",
+                        "text-dark": "#fdfcfb",
+                        "text-muted-light": "#8c6d5a",
+                        "text-muted-dark": "#bcaaa0",
+                        "orange-dark-bg": "#1F1408",
+                        "orange-text-dark": "#2D1B08",
+                        "light-gray-background": "#FFF9F2",
+                        "light-text-color": "#2D1B08",
+                        "dark-text-color": "#1A1816",
+                        "brand-gray": "#7A604D",
+                        "brand-gray-dark": "#7A6960",
+                        "brand-gray-light": "#B5A49B",
+                        "input-dark-bg": "#2A2320"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "serif-kid": ["Lora", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Lexend', sans-serif;
+            min-height: max(884px, 100dvh);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 12px rgba(255, 122, 0, 0.08);
+        }
+        .checkbox-custom:checked {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA0T6RRmFBr1WjqrpUIy7x1t-cguOTNGrJJ9Scg1HHEdpPLdNHOiFt4oxiSYWbMSuo1X6FFozgM5aqgpUS-eyu0yQmOvd90RRtPVK9EhEHbqGz03XEEPLwWNzyowVeJe_ysSXEUlnesNf5Np1vcQ9hPFUKxi4QOZN7NbWzr_-bs7H5SpbYBlTRfG-U_HlQAEPgi5-Fjhf4TRnghnRai9DIw645-iSvWSLXGFEmQlZM2Jv3s4IkltryHskAqMqrBU5ha5zNLomHtD9Bk);
+        }
+        select {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAm5D_pMu2mW2v_bW-lQml07hcwmMBixxYPV7sb7HDA4E4niGutwVVp86C1zx-qadmJFXRXc6nMQ3OZOFcbmL237gso8OWCW1ub2DVXoKmSKJq4XZLwCkQ25hLFgvjOw_9862tT3zGRdoTfCeZnmVmPc-cvZTCzbI3lYJSr6KqSEcXmG0vWSiZx5otiMd_ZL2GDZDbPf7agN6H2SDRzrtkgto3xZ-pq20WY-ia2afs_ViYh0Le1a_fS48FHqFn1m6OUqA3XnvUGZoA1);
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAm5D_pMu2mW2v_bW-lQml07hcwmMBixxYPV7sb7HDA4E4niGutwVVp86C1zx-qadmJFXRXc6nMQ3OZOFcbmL237gso8OWCW1ub2DVXoKmSKJq4XZLwCkQ25hLFgvjOw_9862tT3zGRdoTfCeZnmVmPc-cvZTCzbI3lYJSr6KqSEcXmG0vWSiZx5otiMd_ZL2GDZDbPf7agN6H2SDRzrtkgto3xZ-pq20WY-ia2afs_ViYh0Le1a_fS48FHqFn1m6OUqA3XnvUGZoA1);
+            background-size: 1.5em 1.5em;
+            cursor: pointer;
+        }
+        .mic-glow {
+            box-shadow: 0 0 25px 5px rgba(255, 140, 0, 0.4);
+        }
+        .ios-notch {
+            height: 44px;
+        }
+        .illustration-blob {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        input:focus {
+            @apply ring-2 ring-primary border-transparent outline-none;
+        }
+        .progress-arc {
+            clip-path: inset(0 0 50% 0);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-dark-text-color dark:text-white antialiased transition-colors duration-300">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
